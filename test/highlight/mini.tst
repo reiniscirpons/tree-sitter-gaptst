@@ -18,7 +18,7 @@
 gap> 1+1;
 2
 
-# <- string.documentation
+# <- markup.raw.block
 
 # Another test case
 gap> Concatenation(
@@ -30,7 +30,7 @@ gap> Concatenation(
 abHello
 World
 
-# <- string.documentation
+# <- markup.raw.block
 
 #If statements
 #@if 2+2=4
@@ -39,7 +39,7 @@ gap> Print(10);
 # <- keyword.debug
 10
 
-# <- string.documentation
+# <- markup.raw.block
 # Else clause
 #@else
 # <- keyword.conditional
@@ -47,7 +47,7 @@ gap> Print(200);
 # <- keyword.debug
 200
 
-# <- string.documentation
+# <- markup.raw.block
 #@fi
 # <- keyword.conditional
 
