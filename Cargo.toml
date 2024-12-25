@@ -1,6 +1,6 @@
 [package]
 name = "tree-sitter-gaptst"
-description = "gaptst grammar for the tree-sitter parsing library"
+description = "gaptst grammar for tree-sitter"
 version = "0.4.1"
 authors = ["Reinis Cirpons <rc234@st-andrews.ac.uk>"]
 keywords = ["incremental", "parsing", "gaptst"]
@@ -9,6 +9,7 @@ repository = "https://github.com/gap-system/tree-sitter-gaptst"
 edition = "2021"
 license = "MIT"
 readme = "README.md"
+autoexamples = false
 
 build = "bindings/rust/build.rs"
 include = [
@@ -16,13 +17,17 @@ include = [
   "grammar.js",
   "queries/*",
   "src/*",
+  "tree-sitter.json"
 ]
 
 [lib]
 path = "bindings/rust/lib.rs"
 
 [dependencies]
-tree-sitter = ">=0.21.0"
+tree-sitter-language = "0.1"
 
 [build-dependencies]
-cc = "1.0"
+cc = "1.1"
+
+[dev-dependencies]
+tree-sitter = "0.24"
