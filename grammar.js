@@ -1,5 +1,5 @@
 module.exports = grammar({
-  name: "gaptst",
+  name: 'gaptst',
 
   inline: ($) => [$._statement],
 
@@ -13,28 +13,28 @@ module.exports = grammar({
 
     if_statement: ($) =>
       seq(
-        "#@if",
-        field("condition", $.gap_expression),
+        '#@if',
+        field('condition', $.gap_expression),
         repeat(choice($.comment, $.test_case)),
         optional($.else_clause),
-        "#@fi",
-        "\n",
+        '#@fi',
+        '\n',
       ),
 
     else_clause: ($) =>
-      seq("#@else", "\n", repeat(choice($.comment, $.test_case))),
+      seq('#@else', '\n', repeat(choice($.comment, $.test_case))),
 
-    local_statement: ($) => seq("#@local", $.gap_expression),
+    local_statement: ($) => seq('#@local', $.gap_expression),
 
-    exec_statement: ($) => seq("#@exec", $.gap_expression),
+    exec_statement: ($) => seq('#@exec', $.gap_expression),
 
     test_case: ($) =>
       seq(
-        "gap> ",
+        'gap> ',
         alias($.gap_expression, $.input_line),
         repeat(
           choice(
-            seq("> ", alias($.gap_expression, $.input_line)),
+            seq('> ', alias($.gap_expression, $.input_line)),
             $.output_line,
           ),
         ),
