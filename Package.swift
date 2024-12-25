@@ -2,37 +2,15 @@
 import PackageDescription
 
 let package = Package(
-    name: "TreeSitterGaPtst",
+    name: "TreeSitterGaptst",
     products: [
-        .library(name: "TreeSitterGaPtst", targets: ["TreeSitterGaPtst"]),
+        .library(name: "TreeSitterGaptst", targets: ["TreeSitterGaptst"]),
     ],
     dependencies: [],
     targets: [
-        .target(name: "TreeSitterGaPtst",
+        .target(name: "TreeSitterGaptst",
+                dependencies: [],
                 path: ".",
-                exclude: [
-                    "Cargo.toml",
-                    "Makefile",
-                    "binding.gyp",
-                    "bindings/c",
-                    "bindings/go",
-                    "bindings/node",
-                    "bindings/python",
-                    "bindings/rust",
-                    "prebuilds",
-                    "grammar.js",
-                    "package.json",
-                    "package-lock.json",
-                    "pyproject.toml",
-                    "setup.py",
-                    "test",
-                    "examples",
-                    ".editorconfig",
-                    ".github",
-                    ".gitignore",
-                    ".gitattributes",
-                    ".gitmodules",
-                ],
                 sources: [
                     "src/parser.c",
                     "src/scanner.c",
@@ -41,7 +19,16 @@ let package = Package(
                     .copy("queries")
                 ],
                 publicHeadersPath: "bindings/swift",
-                cSettings: [.headerSearchPath("src")])
+                cSettings: [.headerSearchPath("src")]
+        ),
+        .testTarget(
+            name: "TreeSitterGaptstTests",
+            dependencies: [
+                "SwiftTreeSitter",
+                "TreeSitterGaptst",
+            ],
+            path: "bindings/swift/TreeSitterGaptstTests"
+        )
     ],
     cLanguageStandard: .c11
 )
