@@ -1,4 +1,4 @@
-module github.com/tree-sitter/tree-sitter-gaptst
+module github.com/gap-system/tree-sitter-gaptst
 
 go 1.23
 
