@@ -23,6 +23,11 @@ gap> IsNormal(SymmetricGroup(4), G);
 true
 ```
 
+## Installing for use with editors
+
+See the [`tree-sitter-gap` wiki](https://github.com/gap-system/tree-sitter-gap/wiki/Using-the-grammar-with-editors)
+page for information on installing the grammar for syntax highlighting in neovim and other editors.
+
 ## Tests
 
 To run syntax tree and highlighting tests run
