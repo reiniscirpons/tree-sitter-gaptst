@@ -9,6 +9,7 @@ import (
 
 func TestCanLoadGrammar(t *testing.T) {
 	language := tree_sitter.NewLanguage(tree_sitter_gaptst.Language())
+
 	if language == nil {
 		t.Errorf("Error loading gaptst grammar")
 	}
