@@ -3,10 +3,13 @@ import PackageDescription
 
 let package = Package(
     name: "TreeSitterGaptst",
+    defaultLocalization: "en",
     products: [
         .library(name: "TreeSitterGaptst", targets: ["TreeSitterGaptst"]),
     ],
-    dependencies: [],
+    dependencies: [
+        .package(url: "https://github.com/ChimeHQ/SwiftTreeSitter", from: "0.8.0"),
+    ],
     targets: [
         .target(name: "TreeSitterGaptst",
                 dependencies: [],
